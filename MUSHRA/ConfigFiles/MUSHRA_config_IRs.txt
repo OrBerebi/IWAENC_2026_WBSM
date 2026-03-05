@@ -1,0 +1,60 @@
+Overall QUALITY
+/Signals/DryAudio/casta.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR d_ref.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR d_FOV-BSM-mls.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR d_BSM-mls.wav
+
+Overall QUALITY
+/Signals/DryAudio/casta.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR ds_high_ref.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR ds_high_FOV-BSM-mls.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR ds_high_BSM-mls.wav
+
+Overall QUALITY
+/Signals/DryAudio/casta.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR ds_low_ref.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR ds_low_FOV-BSM-mls.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR ds_low_BSM-mls.wav
+
+Overall QUALITY
+/Signals/DryAudio/casta.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR dsd_high_ref.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR dsd_high_FOV-BSM-mls.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR dsd_high_BSM-mls.wav
+
+Overall QUALITY
+/Signals/DryAudio/casta.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR dsd_low_ref.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR dsd_low_FOV-BSM-mls.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR dsd_low_BSM-mls.wav
+
+Overall QUALITY
+/Signals/DryAudio/female_speech.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR d_ref.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR d_FOV-BSM-mls.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR d_BSM-mls.wav
+
+Overall QUALITY
+/Signals/DryAudio/female_speech.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR ds_high_ref.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR ds_high_FOV-BSM-mls.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR ds_high_BSM-mls.wav
+
+Overall QUALITY
+/Signals/DryAudio/female_speech.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR ds_low_ref.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR ds_low_FOV-BSM-mls.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR ds_low_BSM-mls.wav
+
+Overall QUALITY
+/Signals/DryAudio/female_speech.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR dsd_high_ref.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR dsd_high_FOV-BSM-mls.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR dsd_high_BSM-mls.wav
+
+Overall QUALITY
+/Signals/DryAudio/female_speech.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR dsd_low_ref.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR dsd_low_FOV-BSM-mls.wav
+Signals/IRs/M5-semicirc-mcroomsim-room/BRIR dsd_low_BSM-mls.wav
+

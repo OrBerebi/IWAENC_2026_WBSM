@@ -1,0 +1,3 @@
+OverallQuality
+/Signals/Signals/train/train_ref.wav
+/Signals/Signals/train/train_ancor.wav

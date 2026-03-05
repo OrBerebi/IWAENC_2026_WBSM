@@ -1,0 +1,4 @@
+OVERALL QUALITY
+/Signals/DryAudio/casta.wav
+/Signals/IRs/BRIR_reference.wav
+/Signals/IRs/BRIR_1.wav
