@@ -278,8 +278,8 @@ function params = init_params(beta,arraysetup, base_path, save_folder_path)
     % Source distribution
     params.source_distribution = 0;
     params.Q                   = 36;
-    %params.f_cut_magLS         = 1.5e3;
-    params.f_cut_magLS         = 3e3;
+    params.f_cut_magLS         = 1.5e3;
+    %params.f_cut_magLS         = 3e3;
 
     % Paths
     params.HRTFpath    = base_path + "/HRTF/HRIR_L2702_koln.sofa";
@@ -669,8 +669,8 @@ function [errors,data] = evaluate_errors(hrtf, data, objs, params)
     errors.ild_s.in.mls.REF      = errors.ild_s.in.ls.REF;
     [errors.ild_s.in.ls.BSM,~]   = calc_ILD(hrtf.lebedev.in.bsm.ls, ild_f_band, data.fs);
     [errors.ild_s.in.mls.BSM,~]  = calc_ILD(hrtf.lebedev.in.bsm.mls, ild_f_band, data.fs);
-    %[errors.ild_s.in.ls.WBSM,~]  = calc_ILD(hrtf.lebedev.in.wbsm.ls, ild_f_band, data.fs);
-    %[errors.ild_s.in.mls.WBSM,~] = calc_ILD(hrtf.lebedev.in.wbsm.mls, ild_f_band, data.fs);
+    % [errors.ild_s.in.ls.WBSM,~]  = calc_ILD(hrtf.lebedev.in.wbsm.ls, ild_f_band, data.fs);
+    % [errors.ild_s.in.mls.WBSM,~] = calc_ILD(hrtf.lebedev.in.wbsm.mls, ild_f_band, data.fs);
     [errors.ild_s.in.ls.WBSM,~]  = calc_ILD(hrtf.lebedev.in.tbsm.ls, ild_f_band, data.fs);
     [errors.ild_s.in.mls.WBSM,~] = calc_ILD(hrtf.lebedev.in.tbsm.mls, ild_f_band, data.fs);
     %[errors.ild_s.in.ls.JBSM,~]  = calc_ILD(hrtf.lebedev.in.jbsm.ls, ild_f_band, data.fs);
@@ -680,8 +680,8 @@ function [errors,data] = evaluate_errors(hrtf, data, objs, params)
     errors.ild_s.out.mls.REF      = errors.ild_s.out.ls.REF;
     [errors.ild_s.out.ls.BSM,~]   = calc_ILD(hrtf.lebedev.out.bsm.ls, ild_f_band, data.fs);
     [errors.ild_s.out.mls.BSM,~]  = calc_ILD(hrtf.lebedev.out.bsm.mls, ild_f_band, data.fs);
-    %[errors.ild_s.out.ls.WBSM,~]  = calc_ILD(hrtf.lebedev.out.wbsm.ls, ild_f_band, data.fs);
-    %[errors.ild_s.out.mls.WBSM,~] = calc_ILD(hrtf.lebedev.out.wbsm.mls, ild_f_band, data.fs);
+    % [errors.ild_s.out.ls.WBSM,~]  = calc_ILD(hrtf.lebedev.out.wbsm.ls, ild_f_band, data.fs);
+    % [errors.ild_s.out.mls.WBSM,~] = calc_ILD(hrtf.lebedev.out.wbsm.mls, ild_f_band, data.fs);
     [errors.ild_s.out.ls.WBSM,~]  = calc_ILD(hrtf.lebedev.out.tbsm.ls, ild_f_band, data.fs);
     [errors.ild_s.out.mls.WBSM,~] = calc_ILD(hrtf.lebedev.out.tbsm.mls, ild_f_band, data.fs);
     %[errors.ild_s.out.ls.JBSM,~]  = calc_ILD(hrtf.lebedev.out.jbsm.ls, ild_f_band, data.fs);
@@ -697,8 +697,8 @@ function [errors,data] = evaluate_errors(hrtf, data, objs, params)
     errors.itd.mls.REF  = errors.itd.ls.REF;
     errors.itd.ls.BSM   = calc_ITD(hrtf.az.bsm.ls, gd_cut, data.fs, objs.BSM.freqs_sig);
     errors.itd.mls.BSM  = calc_ITD(hrtf.az.bsm.mls, gd_cut, data.fs, objs.BSM.freqs_sig);
-    %errors.itd.ls.WBSM  = calc_ITD(hrtf.az.wbsm.ls, gd_cut, data.fs, objs.BSM.freqs_sig);
-    %errors.itd.mls.WBSM = calc_ITD(hrtf.az.wbsm.mls, gd_cut, data.fs, objs.BSM.freqs_sig);
+    % errors.itd.ls.WBSM  = calc_ITD(hrtf.az.wbsm.ls, gd_cut, data.fs, objs.BSM.freqs_sig);
+    % errors.itd.mls.WBSM = calc_ITD(hrtf.az.wbsm.mls, gd_cut, data.fs, objs.BSM.freqs_sig);
     errors.itd.ls.WBSM  = calc_ITD(hrtf.az.tbsm.ls, gd_cut, data.fs, objs.BSM.freqs_sig);
     errors.itd.mls.WBSM = calc_ITD(hrtf.az.tbsm.mls, gd_cut, data.fs, objs.BSM.freqs_sig);
     %errors.itd.ls.JBSM  = calc_ITD(hrtf.az.jbsm.ls, gd_cut, data.fs, objs.BSM.freqs_sig);
@@ -710,10 +710,10 @@ function [errors,data] = evaluate_errors(hrtf, data, objs, params)
     [errors.nmse.out.ls.BSM.mu,errors.nmse.out.ls.BSM.std]   = calc_nmse(hrtf.lebedev.out.bsm.ls,hrtf.lebedev.out.ref);
     [errors.nmse.out.mls.BSM.mu,errors.nmse.out.mls.BSM.std] = calc_nmse(hrtf.lebedev.out.bsm.mls,hrtf.lebedev.out.ref);
 
-    %[errors.nmse.in.ls.WBSM.mu,errors.nmse.in.ls.WBSM.std]    = calc_nmse(hrtf.lebedev.in.wbsm.ls,hrtf.lebedev.in.ref);
-    %[errors.nmse.in.mls.WBSM.mu,errors.nmse.in.mls.WBSM.std]  = calc_nmse(hrtf.lebedev.in.wbsm.mls,hrtf.lebedev.in.ref);
-    %[errors.nmse.out.ls.WBSM.mu,errors.nmse.out.ls.WBSM.std]   = calc_nmse(hrtf.lebedev.out.wbsm.ls,hrtf.lebedev.out.ref);
-    %[errors.nmse.out.mls.WBSM.mu,errors.nmse.out.mls.WBSM.std] = calc_nmse(hrtf.lebedev.out.wbsm.mls,hrtf.lebedev.out.ref);
+    % [errors.nmse.in.ls.WBSM.mu,errors.nmse.in.ls.WBSM.std]    = calc_nmse(hrtf.lebedev.in.wbsm.ls,hrtf.lebedev.in.ref);
+    % [errors.nmse.in.mls.WBSM.mu,errors.nmse.in.mls.WBSM.std]  = calc_nmse(hrtf.lebedev.in.wbsm.mls,hrtf.lebedev.in.ref);
+    % [errors.nmse.out.ls.WBSM.mu,errors.nmse.out.ls.WBSM.std]   = calc_nmse(hrtf.lebedev.out.wbsm.ls,hrtf.lebedev.out.ref);
+    % [errors.nmse.out.mls.WBSM.mu,errors.nmse.out.mls.WBSM.std] = calc_nmse(hrtf.lebedev.out.wbsm.mls,hrtf.lebedev.out.ref);
 
     [errors.nmse.in.ls.WBSM.mu,errors.nmse.in.ls.WBSM.std]    = calc_nmse(hrtf.lebedev.in.tbsm.ls,hrtf.lebedev.in.ref);
     [errors.nmse.in.mls.WBSM.mu,errors.nmse.in.mls.WBSM.std]  = calc_nmse(hrtf.lebedev.in.tbsm.mls,hrtf.lebedev.in.ref);
@@ -731,10 +731,10 @@ function [errors,data] = evaluate_errors(hrtf, data, objs, params)
     [errors.mag.out.ls.BSM.mu,errors.mag.out.ls.BSM.std]   = calc_mag(hrtf.lebedev.out.bsm.ls,hrtf.lebedev.out.ref);
     [errors.mag.out.mls.BSM.mu,errors.mag.out.mls.BSM.std] = calc_mag(hrtf.lebedev.out.bsm.mls,hrtf.lebedev.out.ref);
 
-    %[errors.mag.in.ls.WBSM.mu,errors.mag.in.ls.WBSM.std]    = calc_mag(hrtf.lebedev.in.wbsm.ls,hrtf.lebedev.in.ref);
-    %[errors.mag.in.mls.WBSM.mu,errors.mag.in.mls.WBSM.std]  = calc_mag(hrtf.lebedev.in.wbsm.mls,hrtf.lebedev.in.ref);
-    %[errors.mag.out.ls.WBSM.mu,errors.mag.out.ls.WBSM.std]   = calc_mag(hrtf.lebedev.out.wbsm.ls,hrtf.lebedev.out.ref);
-    %[errors.mag.out.mls.WBSM.mu,errors.mag.out.mls.WBSM.std] = calc_mag(hrtf.lebedev.out.wbsm.mls,hrtf.lebedev.out.ref);
+    % [errors.mag.in.ls.WBSM.mu,errors.mag.in.ls.WBSM.std]    = calc_mag(hrtf.lebedev.in.wbsm.ls,hrtf.lebedev.in.ref);
+    % [errors.mag.in.mls.WBSM.mu,errors.mag.in.mls.WBSM.std]  = calc_mag(hrtf.lebedev.in.wbsm.mls,hrtf.lebedev.in.ref);
+    % [errors.mag.out.ls.WBSM.mu,errors.mag.out.ls.WBSM.std]   = calc_mag(hrtf.lebedev.out.wbsm.ls,hrtf.lebedev.out.ref);
+    % [errors.mag.out.mls.WBSM.mu,errors.mag.out.mls.WBSM.std] = calc_mag(hrtf.lebedev.out.wbsm.mls,hrtf.lebedev.out.ref);
 
     [errors.mag.in.ls.WBSM.mu,errors.mag.in.ls.WBSM.std]    = calc_mag(hrtf.lebedev.in.tbsm.ls,hrtf.lebedev.in.ref);
     [errors.mag.in.mls.WBSM.mu,errors.mag.in.mls.WBSM.std]  = calc_mag(hrtf.lebedev.in.tbsm.mls,hrtf.lebedev.in.ref);
@@ -756,10 +756,10 @@ function [errors,data] = evaluate_errors(hrtf, data, objs, params)
     [errors.bsd.out.ls.BSM,~]  = get_gammatone(hrtf.lebedev.out.ref,hrtf.lebedev.out.bsm.ls,f_band,data.fs,ERBstruct);
     [errors.bsd.out.mls.BSM,~] = get_gammatone(hrtf.lebedev.out.ref,hrtf.lebedev.out.bsm.mls,f_band,data.fs,ERBstruct);
 
-    %[errors.bsd.in.ls.WBSM,~]   = get_gammatone(hrtf.lebedev.in.ref,hrtf.lebedev.in.wbsm.ls,f_band,data.fs,ERBstruct);
-    %[errors.bsd.in.mls.WBSM,~]  = get_gammatone(hrtf.lebedev.in.ref,hrtf.lebedev.in.wbsm.mls,f_band,data.fs,ERBstruct);
-    %[errors.bsd.out.ls.WBSM,~]  = get_gammatone(hrtf.lebedev.out.ref,hrtf.lebedev.out.wbsm.ls,f_band,data.fs,ERBstruct);
-    %[errors.bsd.out.mls.WBSM,~] = get_gammatone(hrtf.lebedev.out.ref,hrtf.lebedev.out.wbsm.mls,f_band,data.fs,ERBstruct);
+    % [errors.bsd.in.ls.WBSM,~]   = get_gammatone(hrtf.lebedev.in.ref,hrtf.lebedev.in.wbsm.ls,f_band,data.fs,ERBstruct);
+    % [errors.bsd.in.mls.WBSM,~]  = get_gammatone(hrtf.lebedev.in.ref,hrtf.lebedev.in.wbsm.mls,f_band,data.fs,ERBstruct);
+    % [errors.bsd.out.ls.WBSM,~]  = get_gammatone(hrtf.lebedev.out.ref,hrtf.lebedev.out.wbsm.ls,f_band,data.fs,ERBstruct);
+    % [errors.bsd.out.mls.WBSM,~] = get_gammatone(hrtf.lebedev.out.ref,hrtf.lebedev.out.wbsm.mls,f_band,data.fs,ERBstruct);
 
     [errors.bsd.in.ls.WBSM,~]   = get_gammatone(hrtf.lebedev.in.ref,hrtf.lebedev.in.tbsm.ls,f_band,data.fs,ERBstruct);
     [errors.bsd.in.mls.WBSM,~]  = get_gammatone(hrtf.lebedev.in.ref,hrtf.lebedev.in.tbsm.mls,f_band,data.fs,ERBstruct);
@@ -918,7 +918,7 @@ function plot_results(errors, hrtf,data ,objs, params)
     title_name = "Binaural Erros";
     plot_combined_errors(objs.BSM, errors,data.f_c_bsd, title_name, params.save);
 
-    algorithms_to_plot = {'BSM', 'TBSM'}; 
+    algorithms_to_plot = {'BSM', 'WBSM'}; 
     plot_all_dirs_errors(objs.BSM, errors, title_name, params.save, algorithms_to_plot);
 
     e_ls = errors.ild.ls;
@@ -927,8 +927,8 @@ function plot_results(errors, hrtf,data ,objs, params)
     plot_ILD_curves(e_mls, rad2deg(data.omega_az(:,2)), "MagLS ILD curves", params.save);
     
 
-    plot_ILD_error_curves(e_ls, rad2deg(data.omega_az(:,2)),data.f_c_ild, "LS ", params.save);
-    plot_ILD_error_curves(e_mls, rad2deg(data.omega_az(:,2)),data.f_c_ild, "MagLS ", params.save);
+    % plot_ILD_error_curves(e_ls, rad2deg(data.omega_az(:,2)),data.f_c_ild, "LS ", params.save);
+    % plot_ILD_error_curves(e_mls, rad2deg(data.omega_az(:,2)),data.f_c_ild, "MagLS ", params.save);
 
     e_ls = errors.itd.ls;
     e_mls = errors.itd.mls;
@@ -940,6 +940,11 @@ function plot_results(errors, hrtf,data ,objs, params)
     % 
     % title_name = "ERB-BSD";
     % plot_errors_freq_BSD(errors,data.f_c_bsd,title_name,params.save);
+
+    % Add these lines inside plot_results() to call the new function
+    algos_to_plot = {'BSM', 'WBSM'}; % Or leave empty to plot everything
+    plot_spatial_cue_errors(errors.itd.ls, errors.ild.ls, rad2deg(data.omega_az(:,2)), 'LS Formulation', params.save, algos_to_plot);
+    plot_spatial_cue_errors(errors.itd.mls, errors.ild.mls, rad2deg(data.omega_az(:,2)), 'MagLS Formulation', params.save, algos_to_plot);
 
 
 
@@ -1443,3 +1448,96 @@ function plot_all_dirs_errors(BSMobj, e, title_name, save_folder, algos_to_plot)
     fig_name = fullfile(save_folder, sprintf('%s_all_dirs_combined.fig', title_name));
     savefig(fig, fig_name);
 end
+
+function plot_spatial_cue_errors(e_itd, e_ild, omega_az_deg, title_name, save_folder, algos_to_plot)
+% PLOT_SPATIAL_CUE_ERRORS Plots ITD and ILD absolute errors as a function 
+% of azimuth angle on a single figure (1 row, 2 columns).
+%
+% Inputs:
+%   e_itd         - struct containing ITD data (e.g., errors.itd.ls)
+%   e_ild         - struct containing ILD data (e.g., errors.ild.ls)
+%   omega_az_deg  - azimuth angles in degrees
+%   title_name    - base title for the figure
+%   save_folder   - destination path for saving the .fig file
+%   algos_to_plot - (optional) cell array of algorithm names to plot
+
+    % If specific algorithms aren't provided, plot everything except REF
+    if nargin < 6 || isempty(algos_to_plot)
+        algos = fieldnames(e_itd);
+        algos_to_plot = algos(~strcmp(algos, 'REF')); 
+    end
+    colors = lines(numel(algos_to_plot));
+    
+    % Setup Figure (made wider for 1x2 layout)
+    fig = figure('Name', title_name, 'Color', 'w');
+    t = tiledlayout(1, 2, 'Padding', 'compact', 'TileSpacing', 'compact');
+    
+    % --- Left Subplot: ITD Error ---
+    ax1 = nexttile;
+    hold on;
+    ref_itd = e_itd.REF;
+    legend_labels = cell(1, numel(algos_to_plot));
+    
+    for k = 1:numel(algos_to_plot)
+        name = algos_to_plot{k};
+        if isfield(e_itd, name)
+            % Absolute error: |Estimated ITD - Reference ITD|
+            err_itd = abs(ref_itd - e_itd.(name));
+            plot(omega_az_deg, err_itd, 'LineWidth', 1.5, 'Color', colors(k,:));
+            legend_labels{k} = name;
+        end
+    end
+    
+    % Fold the azimuth angle so the rear hemisphere (90 to 180) mirrors the front (0 to 90)
+    theta_folded = 90 - abs(90 - abs(omega_az_deg));
+    
+    % Add ITD JND Curve (Strict Mossop & Culling 1998 fit, mirrored for 360 deg)
+    jnd_itd_curve = 19 + 0.012 * (theta_folded.^2);
+    plot(omega_az_deg, jnd_itd_curve, '--k', 'LineWidth', 1.5, 'DisplayName', 'Mossop & Culling JND');
+    
+    % Optional: Add a text label manually 
+    text(min(omega_az_deg) + 2, 28, 'JND', 'FontSize', 9, 'VerticalAlignment', 'bottom');
+    xlim([min(omega_az_deg), max(omega_az_deg)]);
+    xlabel('Incident Angle [deg]'); % Added for the side-by-side layout
+    ylabel('ITD Error [\mu s]');    % Fixed \mus warning
+    title(sprintf('ITD Error - %s', title_name));
+    grid on;
+    
+    % --- Right Subplot: ILD Error ---
+    ax2 = nexttile;
+    hold on;
+    
+    % Average the reference ILD across frequency bands (dimension 1)
+    ref_ild = squeeze(mean(e_ild.REF, 1)); 
+    
+    for k = 1:numel(algos_to_plot)
+        name = algos_to_plot{k};
+        if isfield(e_ild, name)
+            % Average the estimated ILD across frequency bands
+            val_ild = squeeze(mean(e_ild.(name), 1));
+            % Absolute error: |Estimated Mean ILD - Reference Mean ILD|
+            err_ild = abs(ref_ild - val_ild);
+            plot(omega_az_deg, err_ild, 'LineWidth', 1.5, 'Color', colors(k,:));
+        end
+    end
+    
+    % Add ILD JND Line (approx 1 dB)
+    yline(1, '--k', 'JND', 'LineWidth', 1.5, 'LabelHorizontalAlignment', 'left');
+    
+    xlim([min(omega_az_deg), max(omega_az_deg)]);
+    xlabel('Incident Angle [deg]');
+    ylabel('ILD Error [dB]');
+    title(sprintf('ILD Error (Frequency Averaged) - %s', title_name));
+    grid on;
+    
+    % --- Global Legend ---
+    lgd = legend(ax1, legend_labels, 'Orientation', 'horizontal', 'Location', 'southoutside');
+    lgd.Layout.Tile = 'south';
+    
+    % --- Save Figure ---
+    if nargin >= 5 && ~isempty(save_folder)
+        fig_name = fullfile(save_folder, sprintf('Spatial_Cue_Errors_%s.fig', strrep(title_name, ' ', '_')));
+        savefig(fig, fig_name);
+    end
+end
+

@@ -4,21 +4,22 @@ close all;
 
 base_path = string(pwd);
 startup_script(base_path); 
-results_dir_path = base_path + "/results/04_March_2026_Aria_M5/";
+results_dir_path = base_path + "/results/04_March_2026_semicirc_M6/";
 mkdir(results_dir_path);
 results_txt_file = fullfile(results_dir_path, 'IWANC_Final_Results.txt');
 
-% Clear previous results file if starting fresh
-if isfile(results_txt_file)
-    delete(results_txt_file);
-end
+% % Clear previous results file if starting fresh
+% if isfile(results_txt_file)
+%     delete(results_txt_file);
+% end
 
 % Define Conditions
 fov_conditions = ["Inside", "Outside"];
+%fov_conditions = ["Outside"];
 
 % Use 999 to represent 'Infinity' (Direct-only)
 drr_conditions = [999, 12, 6, 0]; 
-%drr_conditions = [0]; 
+%drr_conditions = [6, 0]; 
 room_types = ["small","medium","large"];
 target_counts = [1,2,3];
 

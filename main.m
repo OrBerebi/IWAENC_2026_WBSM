@@ -8,16 +8,21 @@ startup_script(base_path)
 
 
 % Define the *relative* path to the results folder within base_path
-figures_save_folder = "/results/26_02_26_yonatan_stuff/";
+figures_save_folder = "/results/22_04_26_AVARIG_ILD-ITD-update/";
 
 %run_beta_ablation(base_path, figures_save_folder);
 
 % WBSM parameter
-beta = 0.075;
+%beta = 0.075;
+%beta = 0.0175;
+beta = 0.01;
 
 % array config
 arraysetup.M            = 6;
 arraysetup.arrayType    = 1;
+%arraysetup.M            = 7;
+%arraysetup.arrayType    = 6;
+
 arraysetup.sphereType   = "rigid";
 arraysetup.fs           = 48e3; 
 [arraysetup.th_array, ~, arraysetup.ph_array, arraysetup.r_array] = ...

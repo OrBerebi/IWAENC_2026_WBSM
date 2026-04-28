@@ -3,7 +3,7 @@ function c = LeastSqueres_BSM_solution(V, h,W,lambda)
     %c = pinv(V*V')*V*conj(h);
 
     % Wighted
-    c = (V * abs(W).^2 * V'+ lambda * eye(size(V,1))) \ (V * abs(W).^2 * conj(h));
+    c = (V * W * V'+ lambda * eye(size(V,1))) \ (V * W * conj(h));
 
 
     % [U, S, Vh] = svd(V, 'econ');  % V ≈ U*S*Vh'

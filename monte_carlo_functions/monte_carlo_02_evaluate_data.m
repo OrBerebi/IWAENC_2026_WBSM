@@ -11,8 +11,10 @@ function monte_carlo_02_evaluate_data(base_path, data_dir, scenarios_file, resul
     target_lufs = -23;     
 
     fprintf('\n=== STEP 1: Calculating Spatial Filters ===\n');
-    arraysetup.M            = 5;
-    arraysetup.arrayType    = 6;
+    % arraysetup.M            = 5;
+    % arraysetup.arrayType    = 6;
+    arraysetup.M            = 6;
+    arraysetup.arrayType    = 1;
     arraysetup.sphereType   = "rigid";
     arraysetup.fs           = fs_proc; 
     [arraysetup.th_array, ~, arraysetup.ph_array, arraysetup.r_array] = ...

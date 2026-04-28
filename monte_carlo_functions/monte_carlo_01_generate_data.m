@@ -27,8 +27,8 @@ function monte_carlo_01_generate_data(base_path, drr_val, fov_cond, room_types ,
     end
 
     % Initialize Array
-    arraysetup.M            = 5;
-    arraysetup.arrayType    = 6;
+    arraysetup.M            = 6;
+    arraysetup.arrayType    = 1;
     arraysetup.sphereType   = "rigid";
     [arraysetup.th_array, ~, arraysetup.ph_array, arraysetup.r_array] = ...
         BSM_toolbox.GetArrayPositions(arraysetup.arrayType, arraysetup.M, 0);

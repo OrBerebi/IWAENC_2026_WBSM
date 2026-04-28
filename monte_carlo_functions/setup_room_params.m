@@ -42,10 +42,10 @@ function roomsetup = setup_room_params(type_str,diffuese_flag,specular_flag)
     roomsetup.S          = 0.1; 
     roomsetup.freq_bands = [125, 250, 500, 1000, 2000, 4000];
     
-    roomsetup.N_PW       = 18;
-    roomsetup.fs         = 16e3;
-    %roomsetup.fs         = 48e3;
-    %roomsetup.N_PW       = 32;
+    %roomsetup.N_PW       = 18;
+    %roomsetup.fs         = 16e3;
+    roomsetup.fs         = 48e3;
+    roomsetup.N_PW       = 32;
     roomsetup.roomsim_fs = 48e3;
     roomsetup.c          = 343;
 

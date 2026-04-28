@@ -6,12 +6,12 @@ function render_single_source_binaural(base_path, dry_sig_path, out_dir)
     if ~exist(out_dir, 'dir'), mkdir(out_dir); end
 
     %% --- 1. Simulation Parameters ---
-    beta        = 0.075;   
+    beta        = 0.001;   
     target_lufs = -23;
     
     room_type_str = 'medium'; % Example room type
-    diffuese_flag = false;
-    specular_flag = false;
+    diffuese_flag = true;
+    specular_flag = true;
 
     roomsetup          = setup_room_params(room_type_str, diffuese_flag, specular_flag);
     fs_proc            = roomsetup.fs; 
@@ -23,7 +23,7 @@ function render_single_source_binaural(base_path, dry_sig_path, out_dir)
     roomsetup.HRTF_path = hrtf_path;
     
     fprintf('\n=== STEP 1: Setting up Array and Room ===\n');
-    arraysetup.M            = 5;
+    arraysetup.M            = 7;
     arraysetup.arrayType    = 6;
     arraysetup.sphereType   = "rigid";
     arraysetup.fs           = fs_proc; 
@@ -33,6 +33,7 @@ function render_single_source_binaural(base_path, dry_sig_path, out_dir)
     % Define a single source position [x, y, z] in meters
     th = deg2rad(90);
     ph = deg2rad(45);
+    %ph = deg2rad(90);
     %dis = 0.4;  % DRR 12 dB at medium room 
     dis = 0.85; % DRR 6 dB at medium room 
     %dis = 1.85;  % DRR 0 dB at medium room 

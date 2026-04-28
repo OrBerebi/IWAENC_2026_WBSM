@@ -6,10 +6,12 @@ function run_beta_ablation(base_path, save_folder_path)
     %% 1. Setup
     % Define beta range
     % Added missing comma between 0.7 and 0.8
-    beta_vals = [0.001, 0.005, 0.01, 0.05,0.075, 0.1, 0.2, 0.4, 0.5, 0.6, 0.7, 0.8, 1.0];
+    %beta_vals = [0.001, 0.005, 0.01, 0.05,0.075, 0.1, 0.2, 0.4, 0.5, 0.6, 0.7, 0.8, 1.0];
+    beta_vals = logspace(-3,0,15);
     %beta_vals = [0.05,0.075, 0.1, 0.2, 0.4, 0.5, 0.6, 0.7, 0.8, 1.0];
     %beta_vals = [0.075];
-    
+   
+
     n_betas = length(beta_vals);
     
     % Initialize storage vectors (Separate for LS and MLS)
@@ -26,14 +28,9 @@ function run_beta_ablation(base_path, save_folder_path)
     fprintf('Starting Beta Ablation Study (%d iterations)...\n', n_betas);
 
 
-
-
-    
-
-
     % array config
-    arraysetup.M            = 7;
-    arraysetup.arrayType    = 6;
+    arraysetup.M            = 6;
+    arraysetup.arrayType    = 1;
     arraysetup.sphereType   = "rigid";
     arraysetup.fs           = 48e3; 
     [arraysetup.th_array, ~, arraysetup.ph_array, arraysetup.r_array] = ...
@@ -103,7 +100,8 @@ function run_beta_ablation(base_path, save_folder_path)
 
     % --- Figure 1: LS Solver (Top: NMSE, Bottom: Mag) ---
     fig_ls = figure('Name', 'Ablation: LS Solver', 'Color', 'w');
-    t_ls = tiledlayout(2, 1, 'TileSpacing', 'compact', 'Padding', 'compact');
+    %t_ls = tiledlayout(2, 1, 'TileSpacing', 'compact', 'Padding', 'compact');
+    t_ls = tiledlayout(1, 2, 'TileSpacing', 'compact', 'Padding', 'compact');
     
     % Top Tile: NMSE
     nexttile;
@@ -138,8 +136,9 @@ function run_beta_ablation(base_path, save_folder_path)
 
     
     % --- Figure 2: MLS Solver (Top: NMSE, Bottom: Mag) ---
-    fig_mls = figure('Name', 'Ablation: MLS Solver', 'Color', 'w', 'Position', [750 100 600 800]);
-    t_mls = tiledlayout(2, 1, 'TileSpacing', 'compact', 'Padding', 'compact');
+    fig_mls = figure('Name', 'Ablation: MLS Solver', 'Color', 'w');
+    %t_mls = tiledlayout(2, 1, 'TileSpacing', 'compact', 'Padding', 'compact');
+    t_mls = tiledlayout(1, 2, 'TileSpacing', 'compact', 'Padding', 'compact');
     
     % Top Tile: NMSE (Low Freq)
     nexttile;
